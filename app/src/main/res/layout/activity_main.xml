@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
 
         android:text="A Tic Tac Toe board has 8 squares"
-        android:id="@+id/q1TV"
+        android:id="@+id/questionTV"
         android:textSize="24sp"
         />
     <LinearLayout android:layout_width="wrap_content"

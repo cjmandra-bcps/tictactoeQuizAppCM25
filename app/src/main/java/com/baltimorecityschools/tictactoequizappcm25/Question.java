@@ -12,16 +12,17 @@ public class Question {
     }
 
     public Question() {
-        qPrompt="";
-        correctAnswer=false;
+        qPrompt = "";
+        correctAnswer = false;
 
     }
 
-    public String getQPrompt() {
+    public String getqPrompt() {
         return qPrompt;
 
-}
-    public boolean isThisCorrectAnswer() {
+    }
+
+    public boolean isThisCorrectAnswer(boolean userAnswer) {
         return correctAnswer;
     }
 
@@ -29,3 +30,4 @@ public class Question {
     public String toString() {
         return "Question{" + "qPrompt=" + qPrompt + ", correctAnswer=" + correctAnswer + '}';
     }
+}
