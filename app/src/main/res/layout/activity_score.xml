@@ -19,5 +19,13 @@
         android:textSize="40sp"
         android:id="@+id/scoreTV"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="SEND SCORE BY EMAIL"
+        android:id="@+id/emailBTN"
+        android:textSize="24sp"
+        />
 
 </LinearLayout>

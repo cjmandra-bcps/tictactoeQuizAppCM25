@@ -91,14 +91,15 @@ public class MainActivity extends AppCompatActivity {
                currentQ = questions[currentIndex];
                questionTV.setText(currentQ.getqPrompt());
 
-               }
+               }else{
 
-            Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
-            myToast.show();
+//            Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
+//            myToast.show();
 
                 Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
                 myIntent.putExtra("score", score);
                startActivity(myIntent);
+               }
             }
         });
     }

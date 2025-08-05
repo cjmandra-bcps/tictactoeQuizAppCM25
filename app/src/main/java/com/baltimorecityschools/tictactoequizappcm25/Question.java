@@ -23,7 +23,7 @@ public class Question {
     }
 
     public boolean isThisCorrectAnswer(boolean userAnswer) {
-        return correctAnswer;
+        return userAnswer == correctAnswer;
     }
 
     @Override
