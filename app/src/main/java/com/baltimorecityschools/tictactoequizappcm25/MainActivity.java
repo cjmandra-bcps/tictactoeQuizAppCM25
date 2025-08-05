@@ -1,5 +1,6 @@
 package com.baltimorecityschools.tictactoequizappcm25;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,10 +64,13 @@ public class MainActivity extends AppCompatActivity {
                }else{
                    msg = "CORRECT";
                }
-            int duration = Toast.LENGTH_SHORT;
+//            int duration = Toast.LENGTH_SHORT;
+//
+//            Toast myToast = Toast.makeText(MainActivity.this, msg, duration);
+//            myToast.show();
 
-            Toast myToast = Toast.makeText(MainActivity.this, msg, duration);
-            myToast.show();
+                Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
+               startActivity(myIntent);
             }
         });
     }
