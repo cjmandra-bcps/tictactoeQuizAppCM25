@@ -25,8 +25,10 @@ public class ScoreActivity extends AppCompatActivity {
         //2 Inflate UI variables
           scoreTV = (TextView) findViewById(R.id.scoreTV);
           score = 0;
+          //3. Get intent
           incomingIntent = getIntent();
           score = incomingIntent.getIntExtra("score", 0);
           scoreTV.setText(score +"");
+//          this is cool
     }
 }
