@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView q1TV;
     Button trueBtn, falseBtn, finishedBtn;
     String msg;
+    String choice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,18 +28,46 @@ public class MainActivity extends AppCompatActivity {
      falseBtn = (Button) findViewById(R.id.falseBTN);
      finishedBtn = (Button) findViewById(R.id.finishedBTN);
      msg = "";
+     choice = "";
 
 //     R stands for Resources
 // 3. Do what the app needs to do!
     trueBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-                msg = "WRONG";
+//                msg = "WRONG";
+            choice = "true";
+//            int duration = Toast.LENGTH_SHORT;
+
+//            Toast myToast = Toast.makeText(MainActivity.this, msg, duration);
+//            myToast.show();
+        }
+    });
+        falseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                msg = "WRONG";
+                choice = "false";
+//            int duration = Toast.LENGTH_SHORT;
+
+//            Toast myToast = Toast.makeText(MainActivity.this, msg, duration);
+//            myToast.show();
+            }
+        });
+        finishedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                msg = "WRONG";
+               if (choice.equals("true")){
+                   msg = "WRONG";
+               }else{
+                   msg = "CORRECT";
+               }
             int duration = Toast.LENGTH_SHORT;
 
             Toast myToast = Toast.makeText(MainActivity.this, msg, duration);
             myToast.show();
-        }
-    });
+            }
+        });
     }
 }

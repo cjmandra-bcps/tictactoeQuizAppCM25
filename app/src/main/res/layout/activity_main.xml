@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="How many squares are in a Tic Tac Toe board"
+        android:text="A Tic Tac Toe board has 8 squares"
         android:id="@+id/q1TV"
         android:textSize="24sp"
         />
@@ -36,6 +36,7 @@
      <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+         android:layout_gravity="center"
         android:text="FINISHED"
         android:id="@+id/finishedBTN"
         android:textSize="24sp"
