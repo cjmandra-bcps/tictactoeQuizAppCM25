@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button trueBtn, falseBtn, finishedBtn;
     String msg;
     String choice;
+
+    int score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                    msg = "WRONG";
                }else{
                    msg = "CORRECT";
+                   score++;
                }
 //            int duration = Toast.LENGTH_SHORT;
 //
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 //            myToast.show();
 
                 Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);
+                myIntent.putExtra("score", score);
                startActivity(myIntent);
             }
         });
