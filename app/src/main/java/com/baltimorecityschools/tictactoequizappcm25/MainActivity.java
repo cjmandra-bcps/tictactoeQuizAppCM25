@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 qMsg = "INCORRECT";
             }
 
-
+            System.out.println("true msg: " + qMsg + "score: " + score);
 
 
             Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
@@ -76,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     qMsg = "INCORRECT";
                 }
+                System.out.println("false msg: " + qMsg + "score: " + score);
 
 
-            Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
+                Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
             myToast.show();
             }
         });
@@ -91,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
                currentQ = questions[currentIndex];
                questionTV.setText(currentQ.getqPrompt());
 
-               }else{
+               System.out.println("next msg index: " + currentIndex + "score: " + score);
 
+               }else{
+                   System.out.println(" post next msg index: " + currentIndex + "score: " + score);
 //            Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
 //            myToast.show();
 

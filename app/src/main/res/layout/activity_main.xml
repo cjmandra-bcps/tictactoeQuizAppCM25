@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_gravity="center">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="A Tic Tac Toe board has 8 squares"
         android:id="@+id/questionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_gravity="center_horizontal"
+        android:text="A Tic Tac Toe board has 8 squares"
         android:textSize="24sp"
+        android:layout_marginTop="240dp"
         />
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center_horizontal">
 
         <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TRUE"
             android:id="@+id/trueBTN"
             android:textSize="24sp"
+            android:layout_marginEnd="8dp"
 
             />
         <Button
@@ -37,9 +40,11 @@
      <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_gravity="center"
+         android:layout_gravity="center_horizontal"
         android:text="NEXT"
         android:id="@+id/finishedBTN"
         android:textSize="24sp"
+         android:layout_marginTop="16dp
+"
         />
     </LinearLayout>
