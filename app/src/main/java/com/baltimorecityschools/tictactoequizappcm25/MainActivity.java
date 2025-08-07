@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
             Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
             myToast.show();
             // Disable buttons after answering
-//            trueBtn.setEnabled(false);
-//            falseBtn.setEnabled(false);
+            trueBtn.setEnabled(false);
+            falseBtn.setEnabled(false);
         }
     });
         falseBtn.setOnClickListener(new View.OnClickListener() {
@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast myToast = Toast.makeText(MainActivity.this, qMsg, duration);
             myToast.show();
                 // Disable buttons after answering
-//                trueBtn.setEnabled(false);
-//                falseBtn.setEnabled(false);
+                trueBtn.setEnabled(false);
+                falseBtn.setEnabled(false);
             }
         });
         nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("score", score);
                startActivity(myIntent);
                }
+                // Enable buttons after answering
+                trueBtn.setEnabled(true);
+                falseBtn.setEnabled(true);
             }
         });
     }
