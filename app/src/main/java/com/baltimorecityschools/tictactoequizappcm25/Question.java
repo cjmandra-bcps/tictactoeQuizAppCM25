@@ -23,7 +23,9 @@ public class Question {
     }
 
     public boolean isThisCorrectAnswer(boolean userAnswer) {
+        System.out.println(" userAnswer == correctAnswer " + (userAnswer == correctAnswer));
         return userAnswer == correctAnswer;
+
     }
 
     @Override
