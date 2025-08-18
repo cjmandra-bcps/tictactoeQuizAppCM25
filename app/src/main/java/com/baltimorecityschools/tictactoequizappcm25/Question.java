@@ -3,11 +3,13 @@ package com.baltimorecityschools.tictactoequizappcm25;
 public class Question {
     private String qPrompt;
     private boolean correctAnswer;
+    private int imageResourceId;
 
 
-    public Question(String qPrompt, boolean correctAnswer) {
+    public Question(String qPrompt, boolean correctAnswer, int imageResourceId) {
         this.qPrompt = qPrompt;
         this.correctAnswer = correctAnswer;
+        this.imageResourceId = imageResourceId;
 
     }
 
@@ -26,6 +28,11 @@ public class Question {
         System.out.println(" userAnswer == correctAnswer " + (userAnswer == correctAnswer));
         return userAnswer == correctAnswer;
 
+    }
+
+
+    public int getImageResourceId() {
+        return imageResourceId;
     }
 
     @Override

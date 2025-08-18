@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TictactoeQuizAppCM25</string>
+    <string name="question_image_desc">Images related to tic tac toeand questions</string>
 </resources>

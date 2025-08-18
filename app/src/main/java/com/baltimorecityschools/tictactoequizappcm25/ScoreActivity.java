@@ -1,11 +1,13 @@
 package com.baltimorecityschools.tictactoequizappcm25;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,22 +19,27 @@ import org.w3c.dom.Text;
 
 public class ScoreActivity extends AppCompatActivity {
 //1. Declare Vars
-    int score;
+    int score, highScore;
     Button emailBTN;
-    TextView scoreTV;
+    TextView scoreTV, highScoreTV;
     Intent incomingIntent;
+
+    public static final String PREFS_NAME = "QuizAppPrefs";
+    public static final String KEY_HIGH_SCORE = "highScore";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
         //2 Inflate UI variables
+        highScoreTV = (TextView) findViewById(R.id.highScoreTV);
           scoreTV = (TextView) findViewById(R.id.scoreTV);
           score = 0;
           //3. Get intent
           incomingIntent = getIntent();
           score = incomingIntent.getIntExtra("score", 0);
           scoreTV.setText(score +"");
+        saveAndDisplayHighScore(score, highScoreTV);
 //          this is cool
         emailBTN = (Button) findViewById(R.id.emailBTN);
 
@@ -59,6 +66,20 @@ public class ScoreActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
+        }
+    }
+    private void saveAndDisplayHighScore(int currentScore, TextView highScoreTextView) {
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        int previousHighScore = prefs.getInt(KEY_HIGH_SCORE, 0);
+
+        if (currentScore > previousHighScore) {
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt(KEY_HIGH_SCORE, currentScore);
+            editor.apply();
+            highScoreTextView.setText("New High Score: " + currentScore);
+            Toast.makeText(this, "New High Score: " + currentScore + "!", Toast.LENGTH_LONG).show();
+        } else {
+            highScoreTextView.setText("High Score: " + previousHighScore);
         }
     }
 }
